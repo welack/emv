@@ -8,11 +8,13 @@ import (
 )
 
 type Account struct {
-	IMAPHost string `json:"imap_host"`
-	IMAPPort string `json:"imap_port"`
-	SMTPHost string `json:"smtp_host"`
-	SMTPPort string `json:"smtp_port"`
-	User     string `json:"user"`
+	IMAPHost      string `json:"imap_host"`
+	IMAPPort      int    `json:"imap_port"`
+	SMTPHost      string `json:"smtp_host"`
+	SMTPPort      int    `json:"smtp_port"`
+	User          string `json:"user"`
+	TLSSkipVerify bool   `json:"tls_skip_verify"`
+	IMAPTLSMode   string `json:"imap_tls_mode"`
 }
 
 func load_config(app_name string) (*Account, error) {
